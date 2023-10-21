@@ -23,9 +23,7 @@ require 'Connection/connection.php';
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <link
-        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
     <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
@@ -68,47 +66,44 @@ require 'Connection/connection.php';
                                                 <div class="col-md-6">
                                                     <div class="form-group">
                                                         <label for="form_name">Product ID</label>
-                                                        <input id="form_name" type="text" name="username"
-                                                            class="form-control" placeholder="Your Name"
-                                                            required="required" data-error="Username is required.">
+                                                        <input id="form_name" type="text" name="username" class="form-control" placeholder="" required="required" data-error="Username is required." readonly>
 
                                                     </div>
                                                 </div>
                                                 <div class="col-md-6">
                                                     <div class="form-group">
                                                         <label for="form_name">Testing ID</label>
-                                                        <input id="form_name" type="text" name="username"
-                                                            class="form-control" placeholder="Your Name"
-                                                            required="required" data-error="Username is required.">
+                                                        <input id="form_name" type="text" name="username" class="form-control" placeholder="Your Name" required="required" data-error="Username is required." readonly>
 
                                                     </div>
                                                 </div>
-                                                <div class="col-md-6">  
-                                                    <div class="form-group">
-                                                        <label for="form_lastname">Date</label>
-                                                        <input id="form_lastname" type="date" name="date"
-                                                            class="form-control" required="required"
-                                                            data-error="Date is required.">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="row">
                                                 <div class="col-md-6">
                                                     <div class="form-group">
-                                                        <label for="form_email"> Fuse Rating (Amps)</label>
-                                                        <input id="form_email" type="number" min="1" max="5"
-                                                            name="rating" class="form-control"
-                                                            placeholder="Rate out of 5" required="required"
-                                                            data-error="Rating is required.">
+                                                        <label for="form_name">Uploader Name</label>
+                                                        <input id="form_name" type="text" name="username" class="form-control" placeholder="Your Name" required="required" data-error="Username is required." readonly>
 
                                                     </div>
                                                 </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label for="form_name">Product</label>
+                                                        <input id="form_name" type="text" name="username" class="form-control" placeholder="Your Name" required="required" data-error="Username is required." readonly>
+
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label for="form_name">Date</label>
+                                                        <input id="form_name" type="text" name="username" class="form-control" placeholder="Your Name" required="required" data-error="Username is required." readonly>
+                                                    </div>
+                                                    
+                                                </div>
+                                               
                                                 <div class="col-md-6">
                                                     <div class="form-group">
                                                         <label for="form_need">Testing Type</label>
-                                                        <select id="form_need" name="testing-type" class="form-control"
-                                                            required="required" data-error="Please specify your need.">
-                                                            <option value="" selected disabled>--Select Your Issue--
+                                                        <select id="form_need" name="testing-type" class="form-control" required="required" data-error="Please specify your need.">
+                                                            <option value="" selected disabled>--Select Testing Type--
                                                             </option>
                                                             <option>Voltage Test</option>
                                                             <option>Capacity Test</option>
@@ -119,25 +114,48 @@ require 'Connection/connection.php';
 
                                                     </div>
                                                 </div>
+                                                    
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label for="form_email"> Fuse Rating (Amps)</label>
+                                                        <input id="form_email" type="number" min="1" max="5" name="rating" class="form-control" placeholder="Rate out of 5" required="required" data-error="Rating is required.">
+
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                <div class="form-group">
+                                                        <label for="form_need">Result</label>
+                                                        <select id="form_need" name="testing-type" class="form-control" required="required" data-error="Please specify your need.">
+                                                            <option value="" selected disabled>--Select the Result  --
+                                                            </option>
+                                                            <option>Pass</option>
+                                                            <option>Fail</option>
+                                                        </select>
+
+                                                    </div>
+                                                </div>
                                             </div>
                                             <div class="row">
                                                 <div class="col-md-12">
                                                     <div class="form-group">
-                                                        <label for="form_message">Description</label>
-                                                        <textarea id="form_message" name="desc" class="form-control"
-                                                            placeholder="Write your message here." rows="4"
-                                                            required="required"
-                                                            data-error="Please, leave us a message."></textarea>
+                                                        <label for="form_message">Remarks</label>
+                                                        <textarea id="form_message" name="desc"class="form-control" placeholder="Write your Remarks here." rows="1" data-error="Please, leave us a message."></textarea>
                                                     </div>
 
                                                 </div>
-
-
                                                 <div class="col-md-12">
+                                                    <div class="form-group">
+                                                        <label for="form_message">Description</label>
+                                                        <textarea id="form_message" name="desc" class="form-control" placeholder="Write your message here." rows="4" required="required" data-error="Please, leave us a message."></textarea>
+                                                    </div>
 
-                                                    <input type="submit" class="btn btn-primary btn-send  pt-2 btn-block
-                    " value="Send For Testing" name="submit">
-
+                                                </div>
+                                                <div class="col-md-12">
+                                                    <input type="submit" class="btn btn-primary btn-send  pt-2 btn-block" value="Send For Testing" name="submit">
                                                 </div>
 
                                             </div>
@@ -178,8 +196,7 @@ require 'Connection/connection.php';
     </a>
 
     <!-- Logout Modal-->
-    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">

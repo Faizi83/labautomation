@@ -8,7 +8,6 @@ if (!isset($_SESSION['user_id'])) {
 <?php
  require 'Connection/connection.php';
  ?>
-
 <!-- PHP for database -->
 <?php
 
@@ -22,7 +21,7 @@ if(isset($_POST['submit']))
          $desc = $_POST['desc'];
 
 
-         $insert_query = "INSERT INTO `capacitors`(`username`, `date`, `rating`, `testing_type`, `description`) VALUES (:username, :date, :rating, :testing_type, :desc)";
+         $insert_query = "INSERT INTO `fuses`(`username`, `date`, `rating`, `testing_type`, `description`) VALUES (:username, :date, :rating, :testing_type, :desc)";
          $insert_query_prepare = $connection->prepare($insert_query);
          $insert_query_prepare->bindParam(':username',$username,PDO::PARAM_STR);
          $insert_query_prepare->bindParam(':date',$date,PDO::PARAM_STR);
@@ -45,7 +44,6 @@ if(isset($_POST['submit']))
 
 
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -76,17 +74,17 @@ if(isset($_POST['submit']))
     <!-- Page Wrapper -->
     <div id="wrapper">
 
-   <!-- Navbar Start -->
+         <!-- Navbar Start -->
 
-        <?php require 'header/navbar.php' ?>
+         <?php require 'header/navbar.php' ?>
 
-    <!-- Navbar End -->
+         <!-- Navbar End -->
 
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 style="color: rgba(31, 28, 28, 0.726);"  class="h3 mb-4 font-weight-bold  text-center">Capacitors Testing</h1>
+                    <h1 style="color: rgba(31, 28, 28, 0.726);"  class="h3 mb-4 font-weight-bold  text-center">Fuses Testing</h1>
                     <hr>
 
                     <!-- Form Start -->
@@ -121,8 +119,8 @@ if(isset($_POST['submit']))
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label for="form_email"> Capacitor Rating (F)</label>
-                                            <input id="form_email" type="number" min="1" max="5" name="rating" class="form-control" placeholder="Rate out of 5" required="required" data-error="Rating is required.">
+                                            <label for="form_email"> Fuse Rating (Amps)</label>
+                                            <input id="form_email" type="number" min="1" max="5" name="rating" class="form-control" placeholder="Rate out of 5"  required="required" data-error="Rating is required.">
                                             
                                         </div>
                                     </div>
@@ -131,9 +129,9 @@ if(isset($_POST['submit']))
                                             <label for="form_need">Testing Type</label>
                                             <select id="form_need" name="testing-type" class="form-control" required="required" data-error="Please specify your need.">
                                                 <option value="" selected disabled>--Select Your Issue--</option>
-                                                <option >Capacitance Test</option>
-                                                <option >Dielectric Test</option>
-                                                <option >Leakage Current Test</option>
+                                                <option >Voltage Test</option>
+                                                <option >Capacity Test</option>
+                                                <option >Time-Current Test</option>
                                                 <option >Insulation  Test</option>
                                                 <option >Other</option>
                                             </select>

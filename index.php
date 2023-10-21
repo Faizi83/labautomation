@@ -12,29 +12,29 @@ require 'Connection/connection.php';
 <?php
 // to count the total number of products in all Tables
 // An array of your product table names
-$productTables = array('fuses', 'capacitors', 'resistors', 'switchgears');
+// $productTables = array('fuses', 'capacitors', 'resistors', 'switchgears');
 
 // Initialize a variable to store the total product count
-$totalProductCount = 0;
+// $totalProductCount = 0;
 
 // Loop through each product table and count the rows
-foreach ($productTables as $table) {
-    $countQuery = "SELECT COUNT(*) as count FROM " . $table;
-    $countStatement = $connection->prepare($countQuery);
-    $countStatement->execute();
-    $countData = $countStatement->fetch(PDO::FETCH_ASSOC);
+// foreach ($productTables as $table) {
+//     $countQuery = "SELECT COUNT(*) as count FROM " . $table;
+//     $countStatement = $connection->prepare($countQuery);
+//     $countStatement->execute();
+//     $countData = $countStatement->fetch(PDO::FETCH_ASSOC);
 
     // Add the count to the total product count
-    $totalProductCount += $countData['count'];
-}
+//     $totalProductCount += $countData['count'];
+// }
 
 // for count tested product count number
-$tested_count_Query = "SELECT COUNT(*) AS total_products FROM tested_product";
-$tested_count_prepare = $connection->prepare($tested_count_Query);
-$tested_count_prepare->execute();
-$tested_count_Data = $tested_count_prepare->fetch(PDO::FETCH_ASSOC);
+// $tested_count_Query = "SELECT COUNT(*) AS total_products FROM tested_product";
+// $tested_count_prepare = $connection->prepare($tested_count_Query);
+// $tested_count_prepare->execute();
+// $tested_count_Data = $tested_count_prepare->fetch(PDO::FETCH_ASSOC);
 
-$tested_products_count = $tested_count_Data['total_products'];
+// $tested_products_count = $tested_count_Data['total_products'];
 
 
 
@@ -112,7 +112,7 @@ $pass_percentage = ($total_pass_products / $total_products) * 100;
                                     <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
                                         Total Products</div>
                                     <div class="h5 mb-0 font-weight-bold text-gray-800">
-                                        <?php echo "$totalProductCount"; ?>
+                                        <!-- <?php echo "$totalProductCount"; ?> -->
                                     </div>
                                 </div>
                                 <div class="col-auto">
@@ -131,7 +131,9 @@ $pass_percentage = ($total_pass_products / $total_products) * 100;
                                 <div class="col mr-2">
                                     <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
                                         Tested Products</div>
-                                    <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo "$tested_products_count"; ?></div>
+                                    <div class="h5 mb-0 font-weight-bold text-gray-800">
+                                        <!-- <?php echo "$tested_products_count"; ?> -->
+                                    </div>
                                 </div>
                                 <div class="col-auto">
                                     <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
